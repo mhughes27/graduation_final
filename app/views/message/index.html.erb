@@ -1,31 +1,30 @@
-<h1>Hello World</h1>
+<h1>Matt's Guestbook</h1>
+	<div>
+	<%= form_for :message do |f| %>
+	  <p>
+	    <%= f.label "Visitor" %><br>
+	    <%= f.text_field :visitor %>
+	  </p>
+	 
+	  <p>
+	    <%= f.label "Message" %><br>
+	    <%= f.text_area :body %>
+	  </p>
+	 
+	  <p>
+	    <%= f.submit "Leave a Messsage"%>
+	  </p>
+	<% end %>
+	</div>
 
-<h1>New Message</h1>
-
-<%= form_for :message do |f| %>
-  <p>
-    <%= f.label :visitor %><br>
-    <%= f.text_field :visitor %>
-  </p>
+<h1>Previous Messages</h1>
  
-  <p>
-    <%= f.label :body %><br>
-    <%= f.text_area :body %>
-  </p>
- 
-  <p>
-    <%= f.submit "Add a Messsage"%>
-  </p>
-<% end %>
-
-<h1>Listing Messages</h1>
- 
-  <div>
-  <% @messages.each do |message| %>
-    
-    <p><%= message.visitor %> signed the guestbook <%= time_ago_in_words(message.created_at) %> ago.</p>
-    <p>"<%= message.body %>"</p>
-    <hr />
-    
-  <% end %>
-  </div>
+  	<div>
+  	  <% @messages.each do |message| %>
+  	    
+  	    <p><strong><%= message.visitor %></strong> signed the guestbook <%= time_ago_in_words(message.created_at) %> ago.</p>
+  	    <p>"<%= message.body %>"</p>
+  	    <hr />
+  	    
+  	  <% end %>
+  	</div>
