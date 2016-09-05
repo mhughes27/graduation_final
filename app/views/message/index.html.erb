@@ -25,7 +25,7 @@
   	<div>
   	  <% @messages.each do |message| %>
   	    
-  	    <p><strong><%= message.visitor %></strong> signed the guestbook <%= time_ago_in_words(message.created_at) %> ago.</p>
+  	    <p><strong><%= message.visitor %></strong> signed the guestbook <%= time_ago_in_words(message.created_at) %> ago:</p>
   	    <p>"<%= message.body %>"</p>
   	    <hr />
   	    
